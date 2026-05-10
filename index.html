@@ -12,93 +12,68 @@
         body { font-family: 'Noto Sans TC', sans-serif; }
         .bg-paris-blue { background-color: #1A2F4B; }
         .text-gold { color: #D4AF37; }
-        .btn-fb { background-color: #1877F2; transition: 0.3s; }
-        .btn-fb:hover { background-color: #145dbf; transform: scale(1.05); }
+        .btn-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); transition: 0.3s; }
+        .btn-ig:hover { opacity: 0.9; transform: translateY(-2px); }
     </style>
 </head>
 <body class="bg-[#FDFCF8]">
 
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm border-b">
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl font-bold tracking-widest text-paris-blue">BLUE BALLOON</div>
-            <div class="space-x-6 hidden md:flex text-sm">
-                <a href="#about" class="hover:text-gold transition">關於我們</a>
-                <a href="#menu" class="hover:text-gold transition">精選餐點</a>
-                <a href="#contact" class="hover:text-gold transition">位置資訊</a>
+            <div class="space-x-4 flex items-center">
+                <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="hidden md:block bg-[#1877F2] text-white px-4 py-2 rounded text-xs font-bold transition hover:opacity-80">FB</a>
+                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="btn-ig text-white px-4 py-2 rounded text-xs font-bold">Instagram</a>
+                <a href="tel:035552907" class="bg-paris-blue text-white px-4 py-2 rounded text-xs font-bold transition hover:opacity-80">撥打電話</a>
             </div>
-            <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="btn-fb text-white px-4 py-2 rounded text-xs font-bold">
-                私訊粉專
-            </a>
         </div>
     </nav>
 
-    <section class="relative h-screen flex items-center justify-center text-white">
+    <section class="relative h-screen flex items-center justify-center text-white text-center px-4">
         <div class="absolute inset-0 bg-black/40 z-10"></div>
-        <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover" alt="Coffee">
-        <div class="relative z-20 text-center" data-aos="zoom-out">
-            <h2 class="text-5xl md:text-7xl mb-6 tracking-[0.2em] font-bold">在忙碌城市裡</h2>
-            <p class="text-2xl md:text-3xl font-extralight italic mb-12 text-blue-50">留一點巴黎給自己</p>
+        <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover" alt="Cafe">
+        <div class="relative z-20" data-aos="zoom-out">
+            <h2 class="text-4xl md:text-6xl mb-6 tracking-[0.2em] font-bold">在忙碌城市裡</h2>
+            <p class="text-xl md:text-2xl font-extralight italic mb-10 text-blue-50 tracking-widest">留一點巴黎給自己</p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="tel:035552907" class="bg-gold text-white px-10 py-4 text-sm font-bold tracking-widest hover:bg-[#B8962E] transition">立即電話訂位</a>
-                <a href="#contact" class="border border-white px-10 py-4 text-sm font-bold hover:bg-white hover:text-black transition">查看店面地址</a>
+                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="btn-ig text-white px-12 py-4 text-sm font-bold tracking-widest rounded-sm">追蹤我們的日常 IG</a>
+                <a href="#about" class="border border-white px-12 py-4 text-sm font-bold hover:bg-white hover:text-black transition rounded-sm">關於藍氣球</a>
             </div>
         </div>
     </section>
 
     <section id="about" class="py-24 max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
-        <h3 class="text-4xl mb-8 text-paris-blue">藍氣球咖啡 Blue Balloon</h3>
+        <h3 class="text-3xl font-bold mb-8 text-paris-blue">Blue Balloon Coffee</h3>
         <p class="text-gray-500 leading-loose text-lg font-light">
-            位於竹北光明五街的優雅角落。<br>
-            我們專注於提供高品質的手沖精品咖啡與澎湃的早午餐。<br>
-            無論是晨間的咖啡香，還是午後的法式甜點，<br>
-            在這裡，時間是被用來浪費在美好事物上的。
+            位於竹北光明五街的精品咖啡角落。<br>
+            我們不僅提供咖啡，更提供一份慢下來的權利。<br>
+            精緻早午餐、法式甜點、莊園精品手沖。<br>
+            歡迎來找尋屬於你的藍氣球。
         </p>
     </section>
 
-    <section id="menu" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-            <div class="bg-white p-10 shadow-sm border-t-4 border-gold" data-aos="fade-up" data-aos-delay="100">
-                <h4 class="text-xl font-bold mb-4">Brunch</h4>
-                <p class="text-gray-400 text-sm">竹北人最愛的精緻早午餐盤，食材新鮮、豐富。滿足視覺與味覺的享受。</p>
+    <section id="contact" class="py-24 bg-paris-blue text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold text-gold mb-12 tracking-widest" data-aos="fade-down">CONTACT</h3>
+            <div class="space-y-6 text-lg mb-16" data-aos="fade-up">
+                <p>📍 302 新竹縣竹北市光明五街320號</p>
+                <p>📞 03-555-2907</p>
             </div>
-            <div class="bg-white p-10 shadow-sm border-t-4 border-paris-blue" data-aos="fade-up" data-aos-delay="200">
-                <h4 class="text-xl font-bold mb-4">Coffee</h4>
-                <p class="text-gray-400 text-sm">嚴選莊園豆手沖，或是帶有巴黎風味的義式咖啡，每一口都是職人堅持。</p>
-            </div>
-            <div class="bg-white p-10 shadow-sm border-t-4 border-gold" data-aos="fade-up" data-aos-delay="300">
-                <h4 class="text-xl font-bold mb-4">Dessert</h4>
-                <p class="text-gray-400 text-sm">每日限量法式甜點。在巴黎的午後，少不了一抹甜膩的優雅。</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 bg-paris-blue text-white overflow-hidden">
-        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 items-center gap-16">
-            <div data-aos="fade-right">
-                <h3 class="text-3xl font-bold text-gold mb-8">Visit Us</h3>
-                <div class="space-y-6 text-lg font-light">
-                    <p>📍 302 新竹縣竹北市光明五街320號</p>
-                    <p>📞 03-555-2907</p>
-                    <p>💬 更多即時消息請見我們的 Facebook 粉專</p>
-                </div>
-                <div class="mt-12 flex gap-4">
-                    <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="bg-[#1877F2] text-white px-8 py-3 font-bold">開啟 FB 粉專</a>
-                    <a href="https://maps.app.goo.gl/uXpDshNqZ6Yh8F6bA" target="_blank" class="bg-white text-paris-blue px-8 py-3 font-bold">Google 地圖導航</a>
-                </div>
-            </div>
-            <div class="h-64 bg-gray-200 rounded-lg" data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover grayscale opacity-50" alt="Map">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-lg mx-auto">
+                <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="bg-[#1877F2] py-4 font-bold text-sm tracking-widest">FACEBOOK 粉專</a>
+                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="btn-ig py-4 font-bold text-sm tracking-widest">INSTAGRAM 追蹤</a>
+                <a href="http://googleusercontent.com/maps.google.com/3" target="_blank" class="col-span-1 md:col-span-2 border border-white py-4 font-bold text-sm tracking-widest hover:bg-white hover:text-black transition">GOOGLE MAP 導航</a>
             </div>
         </div>
     </section>
 
     <footer class="py-10 text-center text-gray-400 text-[10px] tracking-widest">
-        © BLUE BALLOON COFFEE BRUNCH. 竹北精品咖啡.
+        © BLUE BALLOON COFFEE BRUNCH. 竹北精品咖啡早午餐.
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000 });
+        AOS.init({ duration: 1000, once: true });
     </script>
 </body>
 </html>
