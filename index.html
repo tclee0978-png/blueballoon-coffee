@@ -26,7 +26,7 @@
         .text-gold { color: #D4AF37; }
         .bg-paris-blue { background: #1A2F4B; }
 
-        /* Hero 區塊 */
+        /* Hero 視覺區 */
         .hero-section {
             background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.65)), 
                         url('./bf4276e48642744d5788bdad100cd45136c4f315.jpg');
@@ -38,7 +38,7 @@
             justify-content: center;
         }
 
-        /* 按鈕設計 */
+        /* 豪華按鈕與動效 */
         .btn-gold {
             background: #D4AF37;
             color: #1A2F4B;
@@ -58,7 +58,7 @@
             color: #1A2F4B;
         }
 
-        /* 圖片卡片 */
+        /* 圖片卡片鎖定 */
         .image-card {
             overflow: hidden;
             position: relative;
@@ -101,7 +101,17 @@
             cursor: pointer;
         }
 
-        /* 手機 RWD 優化 */
+        /* 故事行文字樣式 */
+        .story-line {
+            color: rgba(255,255,255,.8);
+            font-size: 1.05rem;
+            line-height: 2.2;
+            letter-spacing: .08em;
+            font-weight: 300;
+            margin-bottom: 0.8rem;
+        }
+
+        /* RWD 手機版強化修正 */
         @media (max-width: 768px) {
             .hero-section { min-height: 85vh; padding-top: 60px; }
             h1 { font-size: 2.2rem !important; }
@@ -115,10 +125,12 @@
 
 <body>
 
-    <!-- 導航欄 -->
+    <!-- 導航欄 (Logo 可點擊回首頁) -->
     <nav class="fixed top-0 w-full z-[100] bg-white/80 backdrop-blur-lg border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase">Blue Balloon</div>
+            <a href="#" class="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase hover:text-gold transition duration-300">
+                Blue Balloon
+            </a>
             <div class="flex items-center gap-6">
                 <a href="#story" class="desktop-nav text-sm tracking-widest hover:text-gold transition">品牌故事</a>
                 <a href="#gallery" class="desktop-nav text-sm tracking-widest hover:text-gold transition">空間美學</a>
@@ -130,7 +142,7 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero-section text-white text-center px-6">
         <div data-aos="fade-up" data-aos-duration="1200">
             <span class="text-gold tracking-[0.5em] text-xs uppercase mb-6 block">The Art of Parisian Living</span>
@@ -142,7 +154,7 @@
             </p>
             <div class="flex flex-col md:flex-row gap-5 justify-center">
                 <a href="tel:035552907" class="btn-gold px-12 py-4 rounded-full font-bold tracking-widest">立即預約</a>
-                <a href="#gallery" class="btn-outline px-12 py-4 rounded-full tracking-widest">探索空間</a>
+                <a href="#gallery" class="btn-outline px-12 py-4 rounded-full tracking-widest">探索美學</a>
             </div>
         </div>
     </section>
@@ -184,7 +196,7 @@
         </div>
     </section>
 
-    <!-- 空間美學 Gallery (修正路徑版) -->
+    <!-- 空間美學 Gallery (5張) -->
     <section id="gallery" class="py-28 bg-[#F8F6F1] px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20" data-aos="fade-up">
@@ -192,7 +204,6 @@
                 <h2 class="text-4xl md:text-5xl font-bold tracking-widest mb-6">空間美學</h2>
                 <p class="text-gray-500 font-light tracking-widest">法式古董擺件 · 歐式宮廷裝潢</p>
             </div>
-            <!-- 5張空間照片 Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="image-card h-80 shadow-lg" data-aos="zoom-in">
                     <img src="./1639207948-577677294-g_l.jpg" class="lightbox-trigger">
@@ -213,18 +224,19 @@
         </div>
     </section>
 
-    <!-- 玫瑰藏夢 -->
+    <!-- 玫瑰藏夢 (感性修正版) -->
     <section id="founder-story" class="py-32 bg-[#1A2F4B] text-white px-6 relative overflow-hidden">
         <div class="max-w-4xl mx-auto text-center relative z-10" data-aos="fade-up">
+            <h3 class="text-gold tracking-widest uppercase text-sm mb-6 italic">Founder Story</h3>
             <h2 class="text-5xl md:text-7xl font-bold tracking-widest mb-12">玫瑰藏夢</h2>
-            <div class="bg-white/5 backdrop-blur-md border border-gold/20 rounded-3xl p-8 md:p-16 text-left space-y-8">
-                <p class="text-lg md:text-xl tracking-widest text-white/80 leading-relaxed">
-                    她曾是精品與古董收藏家。多年來，從世界各地帶回無數歐式古典傢俱、巴洛克擺件與水晶吊燈。
-                </p>
-                <p class="text-gold text-2xl md:text-4xl font-serif text-center py-6">「不該只有自己看見。」</p>
-                <p class="text-lg md:text-xl tracking-widest text-white/80 leading-relaxed text-center">
-                    藍氣球不是一場衝動創業，而是一次溫柔的實踐。
-                </p>
+            <div class="bg-white/5 backdrop-blur-md border border-gold/20 rounded-3xl p-8 md:p-16 text-left space-y-2">
+                <p class="story-line">藍氣球老闆娘曾是精品與古董收藏家。</p>
+                <p class="story-line">多年來，從世界各地帶回無數歐式古典傢俱、巴洛克擺件與水晶吊燈。</p>
+                <p class="story-line">那些被珍藏在家裡的美，後來有一天，她突然覺得：</p>
+                <p class="text-gold text-2xl md:text-4xl font-serif text-center py-8">「不該只有自己看見。」</p>
+                <p class="story-line text-center">於是，她把人生的收藏，慢慢變成了一間咖啡館。</p>
+                <p class="story-line text-center">從數萬朵玫瑰花的天花板，到每一個角落的古董擺設，幾乎都由她親手規劃。</p>
+                <p class="story-line text-center pt-6">藍氣球不是一場衝動創業。而是把熱愛，活成了空間。</p>
             </div>
         </div>
     </section>
@@ -234,12 +246,10 @@
         <div class="max-w-7xl mx-auto">
             <h2 class="text-center text-4xl font-bold tracking-[0.2em] mb-20 uppercase">Selection Menu</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- 第一排 -->
                 <div class="image-card shadow-md aspect-[3/4]"><img src="./11-18-a4adr.jpg" class="lightbox-trigger"></div>
                 <div class="image-card shadow-md aspect-[3/4]"><img src="./12-19-de4hw.jpg" class="lightbox-trigger"></div>
                 <div class="image-card shadow-md aspect-[3/4]"><img src="./14-11-ojgxo.jpg" class="lightbox-trigger"></div>
                 <div class="image-card shadow-md aspect-[3/4]"><img src="./15-12-ecr17.jpg" class="lightbox-trigger"></div>
-                <!-- 第二排 -->
                 <div class="image-card shadow-md aspect-[3/4]"><img src="./153037582_4044462235584850_1618471074868956868_n-2qbru.jpg" class="lightbox-trigger"></div>
                 <div class="image-card shadow-md aspect-[3/4]"><img src="./1639207950-1614601012-g_l.jpg" class="lightbox-trigger"></div>
                 <div class="image-card shadow-md aspect-[3/4]"><img src="./20210207224754_89.jpg" class="lightbox-trigger"></div>
