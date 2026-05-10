@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>藍氣球咖啡 Blue Balloon Coffee | 竹北精品咖啡</title>
+    <title>藍氣球咖啡 Blue Balloon Coffee | 竹北精品咖啡早午餐</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         h1, h2, h3 { font-family: 'Noto Serif TC', serif; }
-        body { font-family: 'Noto Sans TC', sans-serif; }
+        body { font-family: 'Noto Sans TC', sans-serif; overflow-x: hidden; }
         .bg-paris-blue { background-color: #1A2F4B; }
         .text-gold { color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)); }
     </style>
 </head>
 <body class="bg-[#FDFCF8] text-gray-800">
@@ -19,59 +22,84 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl font-bold tracking-[0.2em] text-paris-blue">BLUE BALLOON</div>
             <div class="space-x-8 hidden md:flex text-sm tracking-widest">
-                <a href="#about" class="hover:text-gold transition">關於巴黎</a>
-                <a href="#menu" class="hover:text-gold transition">精品手沖</a>
-                <a href="#contact" class="hover:text-gold transition">前往藍氣球</a>
+                <a href="#about" class="hover:text-gold transition">品牌理念</a>
+                <a href="#menu" class="hover:text-gold transition">精選菜單</a>
+                <a href="#contact" class="hover:text-gold transition">地理位置</a>
             </div>
-            <a href="tel:035552907" class="bg-paris-blue text-white px-6 py-2 rounded-sm text-xs tracking-tighter">PRESERVE A TABLE</a>
+            <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="bg-[#1877F2] text-white px-4 py-2 rounded text-xs flex items-center gap-2">
+                FB 粉專
+            </a>
         </div>
     </nav>
 
-    <section class="relative h-[90vh] flex items-center justify-center">
-        <div class="absolute inset-0 bg-black/30 z-10"></div>
-        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover" alt="Paris Cafe">
-        <div class="relative z-20 text-center text-white">
-            <h2 class="text-4xl md:text-6xl mb-6 tracking-widest">在忙碌城市裡</h2>
+    <section class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0 hero-gradient z-10"></div>
+        <img src="https://images.unsplash.com/photo-1559925393-8be0ec41b5ec?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover" alt="Cafe Interior">
+        <div class="relative z-20 text-center text-white" data-aos="fade-up">
+            <h2 class="text-5xl md:text-7xl mb-6 tracking-widest">在忙碌城市裡</h2>
             <p class="text-2xl md:text-3xl font-extralight italic opacity-90">留一點巴黎給自己</p>
-            <div class="mt-12">
-                <a href="#contact" class="bg-gold/90 text-white px-10 py-4 hover:bg-gold transition text-sm tracking-widest">探索竹北的巴黎角落</a>
+            <div class="mt-12 flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#menu" class="bg-gold text-white px-10 py-4 hover:bg-[#B8962E] transition text-sm tracking-widest">探索精緻菜單</a>
+                <a href="tel:035552907" class="border border-white text-white px-10 py-4 hover:bg-white hover:text-black transition text-sm tracking-widest font-bold">立即撥打預約 03-555-2907</a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-24 max-w-4xl mx-auto px-6 text-center">
-        <span class="text-gold tracking-[0.4em] text-xs uppercase mb-4 block">L'art de vivre</span>
-        <h3 class="text-3xl font-medium mb-8 text-paris-blue">藍氣球咖啡 Blue Balloon</h3>
-        <p class="text-gray-500 leading-loose font-light">
-            我們相信，咖啡不只是提神的飲品，而是一場感官的微型旅行。<br>
-            在竹北的光明五街，我們用職人的溫度，為您構築一處遠離塵囂的靜謐。<br>
-            精品豆的醇香，搭配巴黎式的悠閒，讓每一口啜飲，都是對生活的溫柔致敬。
+    <section id="about" class="py-32 max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+        <span class="text-gold tracking-[0.4em] text-xs uppercase mb-4 block">Blue Balloon Coffee</span>
+        <h3 class="text-4xl font-medium mb-10 text-paris-blue">竹北光明五街的靈魂角落</h3>
+        <p class="text-gray-500 leading-loose text-lg font-light italic">
+            「藍氣球」象徵著輕盈與夢想。<br>
+            我們在竹北為您打造一個法式氛圍的避風港。<br>
+            不論是手沖咖啡的香氣，還是精心準備的早午餐，<br>
+            都是為了讓您在繁忙的日常中，找回屬於自己的節奏。
         </p>
     </section>
 
-    <section id="contact" class="bg-paris-blue text-white py-20 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center">
-            <div>
-                <h4 class="text-gold text-sm tracking-widest mb-4">ADDRESS</h4>
-                <p class="font-light">302 新竹縣竹北市<br>光明五街320號</p>
+    <section id="menu" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-16 tracking-widest text-paris-blue">SPECIALTIES</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group border border-gray-100 p-8 text-center hover:shadow-xl transition" data-aos="fade-right">
+                    <div class="text-4xl mb-4">☕</div>
+                    <h4 class="text-xl font-bold mb-4">精品手沖</h4>
+                    <p class="text-gray-400 text-sm">嚴選莊園咖啡豆，職人現場沖煮，封存最純粹的咖啡果香。</p>
+                </div>
+                <div class="group border border-gray-100 p-8 text-center bg-paris-blue text-white hover:shadow-xl transition shadow-lg" data-aos="fade-up">
+                    <div class="text-4xl mb-4">🥗</div>
+                    <h4 class="text-xl font-bold mb-4">法式早午餐</h4>
+                    <p class="text-blue-100 text-sm">豐富均衡的食材搭配，啟動您一整天的優雅能量。</p>
+                </div>
+                <div class="group border border-gray-100 p-8 text-center hover:shadow-xl transition" data-aos="fade-left">
+                    <div class="text-4xl mb-4">🥐</div>
+                    <h4 class="text-xl font-bold mb-4">職人甜點</h4>
+                    <p class="text-gray-400 text-sm">每日限量供應，讓甜味在舌尖譜寫巴黎的浪漫序曲。</p>
+                </div>
             </div>
-            <div>
-                <h4 class="text-gold text-sm tracking-widest mb-4">PHONE</h4>
-                <p class="font-light">03-555-2907</p>
-            </div>
-            <div>
-                <h4 class="text-gold text-sm tracking-widest mb-4">OPEN HOURS</h4>
-                <p class="font-light">請來電洽詢最新營業時間</p>
-            </div>
-        </div>
-        <div class="mt-16 text-center">
-            <a href="https://www.google.com/maps/search/?api=1&query=新竹縣竹北市光明五街320號" target="_blank" class="inline-block border border-gold text-gold px-8 py-3 hover:bg-gold hover:text-white transition">開啟 Google 地圖導航</a>
         </div>
     </section>
 
-    <footer class="bg-white py-10 text-center text-[10px] text-gray-400 tracking-[0.2em]">
-        &copy; BLUE BALLOON COFFEE BRUNCH. EST. 2026.
+    <section id="contact" class="bg-gray-50 py-24 px-6">
+        <div class="max-w-4xl mx-auto border border-gold p-12 text-center" data-aos="zoom-in">
+            <h3 class="text-2xl font-bold mb-8 text-paris-blue">期待您的光臨</h3>
+            <div class="space-y-6 text-lg tracking-wide">
+                <p>📍 302 新竹縣竹北市光明五街320號</p>
+                <p>📞 03-555-2907</p>
+                <p>🕒 歡迎點擊粉專查看最新營業動態</p>
+            </div>
+            <div class="mt-12">
+                <a href="https://maps.app.goo.gl/YourActualGoogleMapsLink" class="inline-block bg-paris-blue text-white px-12 py-4 tracking-widest text-sm hover:opacity-90 transition">開啟導航地圖</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-paris-blue text-white py-12 text-center text-[10px] tracking-[0.3em] opacity-60">
+        © BLUE BALLOON COFFEE BRUNCH. SINCE 2020.
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
