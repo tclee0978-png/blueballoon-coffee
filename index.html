@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>藍氣球咖啡 Blue Balloon Cafe | 竹北法式宮廷精品</title>
+    <title>藍氣球咖啡 Blue Balloon Cafe | 竹北法式宮廷精品下午茶</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         h1, h2, h3, h4 { font-family: 'Noto Serif TC', serif; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: #FDFCF8; margin: 0; scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #FDFCF8; margin: 0; scroll-behavior: smooth; overflow-x: hidden;}
         .bg-paris-blue { background-color: #1A2F4B; }
         .text-gold { color: #D4AF37; }
         .hero-section {
             background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./bf4276e48642744d5788bdad100cd45136c4f315.jpg');
             background-size: cover; background-position: center; height: 100vh;
         }
+        /* 菜單圖片區優化 */
+        .pswp-gallery__item { cursor: zoom-in; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.4s;}
+        .pswp-gallery__item:hover { transform: scale(1.02); box-shadow: 0 10px 15px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
@@ -26,97 +30,93 @@
             <div class="text-2xl font-bold tracking-[0.3em] uppercase">Blue Balloon</div>
             <div class="flex items-center gap-6">
                 <a href="#menu" class="hidden md:block text-sm font-bold tracking-widest hover:text-gold transition">精選菜單</a>
-                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="text-[#E1306C] text-2xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="text-[#E1306C] text-xl hover:scale-110 transition"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
     </nav>
 
-    <section class="hero-section flex items-center justify-center text-white text-center px-4">
-        <div data-aos="fade-up">
-            <span class="text-[#D4AF37] tracking-[0.5em] text-sm mb-4 block uppercase italic">The Art of Parisian Living</span>
-            <h1 class="text-4xl md:text-7xl mb-8 font-bold leading-tight">在忙碌城市裡<br><span class="text-[#D4AF37]">留一點巴黎給自己</span></h1>
-            <p class="text-lg md:text-xl font-light tracking-[0.2em] mb-10 text-gray-200">竹北精品咖啡 · 法式宮廷空間 · 頂級茗茶甜點</p>
-            <a href="#notice" class="bg-[#D4AF37] text-white px-10 py-4 rounded-full font-bold shadow-2xl hover:bg-[#B8962E] transition inline-block">探索藍氣球</a>
+    <section class="hero-section flex items-center justify-center text-white text-center px-4 relative">
+        <div data-aos="zoom-out" data-aos-duration="1500">
+            <span class="text-[#D4AF37] tracking-[0.5em] text-sm mb-4 block uppercase italic">Zhubei's Parisian Corner</span>
+            <h1 class="text-5xl md:text-8xl mb-8 font-bold leading-tight">在忙碌城市裡<br><span class="text-[#D4AF37]">留一點巴黎給自己</span></h1>
+            <a href="#notice" class="border border-white px-10 py-4 font-bold tracking-widest hover:bg-white hover:text-black transition inline-block mt-8">探索藍氣球</a>
         </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 text-2xl animate-bounce"><i class="fas fa-chevron-down"></i></div>
     </section>
 
-    <section id="notice" class="py-20 bg-[#1A2F4B] text-white text-center">
-        <div class="max-w-5xl mx-auto px-6 border-2 border-[#D4AF37]/40 p-10 md:p-16">
-            <h2 class="text-[#D4AF37] text-2xl font-bold mb-10 tracking-[0.3em]">入店須知 NOTICE</h2>
-            <div class="grid md:grid-cols-2 gap-10 text-base leading-loose tracking-widest font-light text-left">
-                <div class="space-y-4">
-                    <p><i class="fas fa-clock text-[#D4AF37] mr-3"></i> 11:00 - 18:30 (週日店休)</p>
-                    <p><i class="fas fa-wallet text-[#D4AF37] mr-3"></i> 店內僅收現金，無刷卡服務</p>
-                    <p><i class="fas fa-hourglass-half text-[#D4AF37] mr-3"></i> 用餐限時 120 分鐘</p>
-                </div>
-                <div class="space-y-4">
-                    <p class="text-red-200 font-bold"><i class="fas fa-exclamation-triangle text-[#D4AF37] mr-3"></i> 恕不接待 12 歲以下兒童與毛小孩</p>
-                    <p><i class="fas fa-phone text-[#D4AF37] mr-3"></i> 座位不多，建議先來電預約</p>
-                    <p><i class="fas fa-parking text-[#D4AF37] mr-3"></i> 附近設有「光明五街停車場」</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="story" class="py-24 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center" data-aos="fade-up">
+    <section class="py-24 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center" data-aos="fade-up">
         <div class="order-2 md:order-1">
             <h3 class="text-[#D4AF37] tracking-widest text-sm uppercase mb-2">Space Aesthetics</h3>
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-[#1A2F4B]">法式宮廷美學空間</h2>
-            <p class="text-gray-500 leading-relaxed text-lg font-light mb-8">
-                將歐洲古董精品與職人打造的玫瑰花海天花板融為一體。在藍氣球咖啡，每一處細節都是藝術，每一件家具都有故事。這是我們獻給竹北，最優雅的慢活座標。
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-[#1A2F4B]">歐式宮廷美學空間</h2>
+            <p class="text-gray-500 leading-relaxed text-lg font-light mb-8 text-justify">
+                闆娘多年珍藏的歐洲精品家具、水晶吊燈與壁鏡，搭配職人親手打造的玫瑰花海天花板。在藍氣球咖啡，每一處細節都是藝術，每一件家具都有故事。
             </p>
-            <img src="./1639207950-1614601012-g_l.jpg" class="rounded shadow-2xl w-full h-64 object-cover">
+            <img src="./1639207950-1614601012-g_l.jpg" class="rounded shadow-xl w-full h-72 object-cover" data-aos="fade-right">
         </div>
         <div class="order-1 md:order-2">
-            <img src="./bf4276e48642744d5788bdad100cd45136c4f315.jpg" class="rounded shadow-2xl w-full h-[600px] object-cover">
+            <img src="./bf4276e48642744d5788bdad100cd45136c4f315.jpg" class="rounded shadow-2xl w-full h-[650px] object-cover" data-aos="fade-left">
         </div>
     </section>
 
     <section id="menu" class="py-24 bg-white border-y">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-[#1A2F4B] tracking-widest mb-16 uppercase">Menu Selections</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="space-y-4">
-                    <img src="./11-18-a4adr.jpg" class="w-full rounded shadow hover:scale-105 transition duration-500">
-                    <p class="text-xs text-gray-400 italic">Coffee Selection</p>
-                </div>
-                <div class="space-y-4">
-                    <img src="./12-19-de4hw.jpg" class="w-full rounded shadow hover:scale-105 transition duration-500">
-                    <p class="text-xs text-gray-400 italic">Special Drinks</p>
-                </div>
-                <div class="space-y-4">
-                    <img src="./14-11-ojgxo.jpg" class="w-full rounded shadow hover:scale-105 transition duration-500">
-                    <p class="text-xs text-gray-400 italic">Hediard Paris Tea</p>
-                </div>
-                <div class="space-y-4">
-                    <img src="./15-12-ecr17.jpg" class="w-full rounded shadow hover:scale-105 transition duration-500">
-                    <p class="text-xs text-gray-400 italic">Information & Pastry</p>
-                </div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-[#1A2F4B] tracking-widest mb-4 uppercase">Le Menu Sélection</h2>
+                <p class="text-gray-400 text-sm tracking-widest italic">● 點擊圖片即可放大閱覽全菜單 ●</p>
+                <div class="w-20 h-1 bg-gold mx-auto mt-6"></div>
             </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 text-center bg-[#FDFCF8]">
-        <div class="max-w-3xl mx-auto border-2 border-[#D4AF37] p-12">
-            <h3 class="text-3xl font-bold text-[#1A2F4B] mb-8 uppercase tracking-widest">Blue Balloon Cafe</h3>
-            <p class="text-gray-600 font-light tracking-widest mb-10 text-lg">
-                📍 竹北市光明五街320號<br>
-                📞 Tel: 03-555-2907
-            </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="http://googleusercontent.com/maps.google.com/search?q=藍氣球咖啡" target="_blank" 
-                   class="bg-[#1A2F4B] text-white px-12 py-4 font-bold tracking-widest shadow-xl hover:opacity-90 transition">
-                   開啟 Google 地圖
+            
+            <div class="pswp-gallery grid grid-cols-2 md:grid-cols-4 gap-6" id="my-gallery">
+                <a href="./11-18-a4adr.jpg" data-pswp-width="1500" data-pswp-height="2000" target="_blank" class="pswp-gallery__item group" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./11-18-a4adr.jpg" class="w-full h-auto" alt="咖啡選單">
+                    <div class="p-4 bg-gray-50 text-center text-xs text-gray-500 tracking-widest">Coffee & Drinks</div>
+                </a>
+                <a href="./12-19-de4hw.jpg" data-pswp-width="1500" data-pswp-height="2000" target="_blank" class="pswp-gallery__item group" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./12-19-de4hw.jpg" class="w-full h-auto" alt="飲品與單品">
+                    <div class="p-4 bg-gray-50 text-center text-xs text-gray-500 tracking-widest">Special Selection</div>
+                </a>
+                <a href="./14-11-ojgxo.jpg" data-pswp-width="1500" data-pswp-height="2000" target="_blank" class="pswp-gallery__item group" data-aos="fade-up" data-aos-delay="300">
+                    <img src="./14-11-ojgxo.jpg" class="w-full h-auto" alt="百年茗茶">
+                    <div class="p-4 bg-gray-50 text-center text-xs text-gray-500 tracking-widest">Hediard Paris Tea</div>
+                </a>
+                <a href="./15-12-ecr17.jpg" data-pswp-width="1500" data-pswp-height="2000" target="_blank" class="pswp-gallery__item group" data-aos="fade-up" data-aos-delay="400">
+                    <img src="./15-12-ecr17.jpg" class="w-full h-auto" alt="甜點與須知">
+                    <div class="p-4 bg-gray-50 text-center text-xs text-gray-500 tracking-widest">Pastry & Rules</div>
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-gray-400 text-[10px] tracking-[0.5em] uppercase border-t">
+    <section id="notice" class="py-20 bg-[#1A2F4B] text-white">
+        <div class="max-w-4xl mx-auto px-6 border-2 border-[#D4AF37]/30 p-12 relative">
+            <h3 class="text-[#D4AF37] tracking-widest text-sm uppercase mb-4 text-center md:text-left">House Rules & Notes</h3>
+            <div class="grid grid-cols-2 gap-x-10 gap-y-3 text-gray-100 text-base font-light leading-relaxed">
+                <p>📍 竹北市光明五街320號</p>
+                <p>📞 Tel: 03-555-2907</p>
+                <p>🕒 11:00 - 18:30 (週日店休)</p>
+                <p>● 店內僅收現金，用餐限時 120 分鐘</p>
+                <p class="text-red-200 col-span-2">● 恕不接待 12 歲以下兒童與毛小孩</p>
+            </div>
+            <a href="http://googleusercontent.com/maps.google.com/search?q=藍氣球咖啡" target="_blank" class="mt-8 inline-block bg-[#D4AF37] text-white px-10 py-3 font-bold tracking-widest">開啟 Google 地圖導航</a>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-gray-400 text-[10px] tracking-[0.5em] uppercase border-t bg-[#FDFCF8]">
         © Blue Balloon Coffee Zhubei. Parisian Ambience in the City.
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script type="module">
+        import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe-lightbox.min.js';
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '#my-gallery',
+            children: 'a',
+            pswpModule: () => import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.min.js')
+        });
+        lightbox.init();
+    </script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
