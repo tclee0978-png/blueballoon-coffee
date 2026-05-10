@@ -1,239 +1,326 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>藍氣球咖啡 Blue Balloon Cafe｜竹北法式精品咖啡館</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>藍氣球咖啡 Blue Balloon Cafe｜竹北法式精品咖啡館</title>
 
-<!-- 外部資源 -->
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- 核心外掛 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-<style>
-    body {
-        font-family: 'Noto Sans TC', sans-serif;
-        background: #FDFCF8;
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-    }
-    h1, h2, h3, h4 { font-family: 'Noto Serif TC', serif; }
-    .text-gold { color: #D4AF37; }
-    .bg-paris-blue { background: #1A2F4B; }
+    <style>
+        /* 基礎鎖定：防止左右滑動 */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            background: #FDFCF8;
+            color: #1A2F4B;
+            font-family: 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-    /* Hero Section */
-    .hero-section {
-        background: linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.62)),
-                    url('./bf4276e48642744d5788bdad100cd45136c4f315.jpg');
-        background-size: cover;
-        background-position: center;
-        min-height: 100vh;
-    }
+        h1, h2, h3, h4 { font-family: 'Noto Serif TC', serif; }
+        .text-gold { color: #D4AF37; }
+        .bg-paris-blue { background: #1A2F4B; }
 
-    /* 豪華按鈕特效 */
-    .btn-gold { background: #D4AF37; color: #1A2F4B; transition: .3s; }
-    .btn-gold:hover { transform: translateY(-3px) scale(1.03); background: #e7c95e; box-shadow: 0 10px 20px rgba(212,175,55,0.3); }
-    .btn-outline { border: 1px solid rgba(255,255,255,.85); transition: .3s; }
-    .btn-outline:hover { background: white; color: #1A2F4B; }
+        /* Hero 視覺區 */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.65)), 
+                        url('./bf4276e48642744d5788bdad100cd45136c4f315.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .image-card { overflow: hidden; cursor: pointer; }
-    .image-card img { transition: .7s ease; }
-    .image-card:hover img { transform: scale(1.08); }
+        /* 豪華按鈕與動效 */
+        .btn-gold {
+            background: #D4AF37;
+            color: #1A2F4B;
+            transition: .4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-gold:hover {
+            transform: translateY(-4px);
+            background: #e7c95e;
+            box-shadow: 0 15px 30px rgba(212,175,55,0.4);
+        }
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.8);
+            transition: .4s;
+        }
+        .btn-outline:hover {
+            background: white;
+            color: #1A2F4B;
+        }
 
-    .story-line {
-        color: rgba(255,255,255,.78); font-size: 1.08rem; line-height: 2.35; letter-spacing: .1em;
-        font-weight: 300; margin-bottom: 1.5rem; transition: .35s ease;
-    }
-    .story-line:hover { transform: translateX(8px); color: white; }
+        /* 圖片卡片鎖定 */
+        .image-card {
+            overflow: hidden;
+            position: relative;
+            border-radius: 1.5rem;
+            cursor: pointer;
+        }
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.8s ease;
+        }
+        .image-card:hover img { transform: scale(1.1); }
 
-    .floating-text { display: inline-block; transition: .35s ease; }
-    .floating-text:hover { transform: translateY(-5px); text-shadow: 0 8px 20px rgba(212,175,55,0.3); }
+        /* 燈箱 Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
 
-    /* 燈箱 Lightbox */
-    .lightbox {
-        display: none; position: fixed; inset: 0; background: rgba(0,0,0,.92);
-        z-index: 9999; justify-content: center; align-items: center; padding: 24px;
-    }
-    .lightbox.active { display: flex; }
-    .lightbox img { max-width: 94%; max-height: 85vh; border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,0.8); }
-    .lightbox-close { position: absolute; top: 25px; right: 35px; color: white; font-size: 45px; cursor: pointer; }
+        /* 浮動文字 */
+        .floating-text:hover {
+            transform: translateY(-5px);
+            text-shadow: 0 10px 20px rgba(212,175,55,0.3);
+        }
 
-    /* 手機版 RWD 深度優化 */
-    @media screen and (max-width: 768px) {
-        .desktop-link { display: none; }
-        .hero-section { min-height: 90vh; padding-top: 80px; }
-        h1 { font-size: 2.5rem !important; line-height: 1.3 !important; }
-        h2 { font-size: 2rem !important; }
-        .mobile-card { padding: 1.5rem !important; }
-        .story-image { height: 400px !important; }
-        section { padding-top: 70px !important; padding-bottom: 70px !important; }
-        .gallery-img { height: 280px !important; }
-    }
-</style>
+        /* RWD 手機版強化修正 */
+        @media (max-width: 768px) {
+            .hero-section { padding-top: 80px; min-height: 85vh; }
+            h1 { font-size: 2.4rem !important; letter-spacing: 0.05em !important; }
+            h2 { font-size: 1.8rem !important; }
+            .mobile-p { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+            .story-img-h { height: 350px !important; }
+            section { padding-top: 60px !important; padding-bottom: 60px !important; }
+            .desktop-nav { display: none; }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- 導覽列 -->
-<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-[#eee]">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="brand-title text-[#1A2F4B] text-2xl font-bold tracking-[0.25em] uppercase">Blue Balloon</div>
-        <div class="flex items-center gap-6">
-            <a href="#story" class="desktop-link text-sm tracking-[0.2em] hover:text-gold transition">品牌故事</a>
-            <a href="#gallery" class="desktop-link text-sm tracking-[0.2em] hover:text-gold transition">空間相簿</a>
-            <a href="#menu" class="desktop-link text-sm tracking-[0.2em] hover:text-gold transition">精選菜單</a>
-            <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="text-[#E1306C] text-xl">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
+    <!-- 導航欄 -->
+    <nav class="fixed top-0 w-full z-[100] bg-white/80 backdrop-blur-lg border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase">Blue Balloon</div>
+            <div class="flex items-center gap-6">
+                <a href="#story" class="desktop-nav text-sm tracking-widest hover:text-gold transition">品牌故事</a>
+                <a href="#gallery" class="desktop-nav text-sm tracking-widest hover:text-gold transition">相簿空間</a>
+                <a href="#menu" class="desktop-nav text-sm tracking-widest hover:text-gold transition">精選菜單</a>
+                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="text-pink-600 text-xl">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- Hero -->
-<section class="hero-section flex items-center justify-center text-white text-center px-6">
-    <div data-aos="fade-up" data-aos-duration="1200">
-        <span class="text-gold tracking-[0.5em] text-xs uppercase italic mb-6 block floating-text">The Art of Parisian Living</span>
-        <h1 class="text-5xl md:text-8xl leading-tight font-bold tracking-[0.08em] floating-text">在忙碌城市裡<br><span class="text-gold">留一點巴黎給自己</span></h1>
-        <p class="mt-8 text-lg md:text-xl font-light tracking-[0.2em] opacity-85">竹北精品咖啡 · 法式宮廷空間 · 頂級茗茶甜點</p>
-        <div class="mt-12 flex flex-col md:flex-row gap-5 justify-center items-center">
-            <a href="tel:035552907" class="btn-gold px-12 py-4 rounded-full font-bold tracking-[0.25em] shadow-2xl">立即預約</a>
-            <a href="#gallery" class="btn-outline px-12 py-4 rounded-full tracking-[0.25em]">相簿空間</a>
+    <!-- Hero Section -->
+    <section class="hero-section text-white text-center px-6">
+        <div data-aos="fade-up" data-aos-duration="1500">
+            <span class="text-gold tracking-[0.5em] text-xs uppercase mb-6 block">The Art of Parisian Living</span>
+            <h1 class="text-5xl md:text-8xl font-bold leading-tight tracking-wider mb-8">
+                在忙碌城市裡<br><span class="text-gold">留一點巴黎給自己</span>
+            </h1>
+            <p class="text-lg md:text-xl font-light tracking-[0.2em] opacity-90 mb-12">
+                竹北精品咖啡 · 法式宮廷空間 · 頂級茗茶甜點
+            </p>
+            <div class="flex flex-col md:flex-row gap-5 justify-center">
+                <a href="tel:035552907" class="btn-gold px-12 py-4 rounded-full font-bold tracking-widest">立即預約</a>
+                <a href="#gallery" class="btn-outline px-12 py-4 rounded-full tracking-widest">探索美學</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- 入店須知 -->
-<section class="bg-paris-blue text-white py-24">
-    <div class="max-w-5xl mx-auto px-6">
-        <div class="border border-[#D4AF37]/40 p-10 md:p-16 mobile-card" data-aos="fade-up">
-            <h2 class="text-center text-gold text-3xl tracking-[0.25em] uppercase mb-14 floating-text">Notice 入店須知</h2>
-            <div class="grid md:grid-cols-2 gap-10 text-base leading-loose tracking-[0.12em] font-light">
+    <!-- Notice 入店須知 -->
+    <section class="bg-paris-blue text-white py-24 mobile-p">
+        <div class="max-w-4xl mx-auto border border-gold/30 p-10 md:p-16 rounded-3xl" data-aos="zoom-in">
+            <h2 class="text-center text-gold text-2xl md:text-3xl tracking-[0.3em] uppercase mb-12">Notice 入店須知</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-base font-light tracking-widest leading-loose">
                 <div class="space-y-4">
-                    <p>🕒 11:00 - 18:30（週日店休）</p>
-                    <p>● 每人低消為一杯飲品</p>
-                    <p>● 店內僅收現金，用餐限時 120 分鐘</p>
+                    <p>🕒 11:00 - 18:30 (週日店休)</p>
+                    <p>● 每人低消為一項飲品</p>
+                    <p>● 用餐限時 120 分鐘</p>
                 </div>
-                <div class="space-y-4">
-                    <p class="text-red-200">● 恕不接待 12 歲以下兒童與寵物</p>
+                <div class="space-y-4 text-white/80">
+                    <p class="text-red-300">● 恕不接待 12 歲以下兒童與寵物</p>
                     <p>● 酌收 10% 服務費</p>
-                    <p>● 附近設有光明五街停車場</p>
+                    <p>● 設有特約停車場</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- 故事 -->
-<section id="story" class="py-28 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-    <div data-aos="fade-right">
-        <h3 class="text-gold tracking-[0.3em] uppercase italic text-sm mb-4">Atmosphere</h3>
-        <h2 class="text-4xl md:text-5xl text-[#1A2F4B] font-bold leading-tight mb-8">歐式巴洛克宮廷空間</h2>
-        <p class="text-gray-500 leading-loose text-lg font-light mb-10 text-justify">
-            這裡不只是一間咖啡廳，更像是一座能讓人暫時逃離現實的小小博物館。
-            每一件古董、每一道光影、每一口甜點，都像巴黎午後電影裡的慢鏡頭。
-        </p>
-        <div class="border-l-4 border-[#D4AF37] pl-6">
-            <p class="italic text-gray-400 text-lg">「不是每個午後，都值得被匆忙度過。」</p>
-        </div>
-    </div>
-    <div class="image-card rounded-3xl shadow-2xl" data-aos="fade-left">
-        <img src="./bf4276e48642744d5788bdad100cd45136c4f315.jpg" class="story-image w-full h-[650px] object-cover lightbox-img" alt="Cafe">
-    </div>
-</section>
-
-<!-- 玫瑰藏夢 -->
-<section id="founder-story" class="py-28 bg-[#1A2F4B] text-white px-6 relative overflow-hidden">
-    <div class="max-w-5xl mx-auto text-center relative z-10" data-aos="fade-up">
-        <h2 class="text-5xl md:text-7xl font-bold tracking-[0.16em] mb-12">玫瑰藏夢</h2>
-        <div class="bg-white/10 backdrop-blur-md border border-[#D4AF37]/30 rounded-3xl p-10 md:p-16 text-left shadow-2xl mobile-card">
-            <p class="story-line">她曾是精品與古董收藏家。</p>
-            <p class="story-line">多年來，從世界各地帶回無數歐式古典傢俱、巴洛克擺件與水晶吊燈。</p>
-            <p class="text-gold text-2xl md:text-3xl font-serif leading-loose my-10 text-center">「不該只有自己看見。」</p>
-            <p class="story-line">於是，她把對熱愛的堅持活成了空間。</p>
-            <p class="story-line">藍氣球不是一場衝動創業，而是把美學分享給城市的溫柔實踐。</p>
-        </div>
-    </div>
-</section>
-
-<!-- 相簿 -->
-<section id="gallery" class="py-28 bg-[#F8F6F1] px-6">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-20" data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl font-bold text-[#1A2F4B] tracking-[0.12em] mb-6">Gallery 相簿空間</h2>
-            <p class="text-gray-500 font-light">環境 · 菜單 · 甜點 · 生活</p>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="image-card rounded-3xl shadow-xl bg-white overflow-hidden" data-aos="fade-up">
-                <img src="./bf4276e48642744d5788bdad100cd45136c4f315.jpg" class="gallery-img w-full h-[360px] object-cover lightbox-img">
-            </div>
-            <div class="image-card rounded-3xl shadow-xl bg-white overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                <img src="./11-18-a4adr.jpg" class="gallery-img w-full h-[360px] object-cover lightbox-img">
-            </div>
-            <div class="image-card rounded-3xl shadow-xl bg-white overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                <img src="./12-19-de4hw.jpg" class="gallery-img w-full h-[360px] object-cover lightbox-img">
+    <!-- 品牌故事 (RWD 橫向轉直向) -->
+    <section id="story" class="py-28 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right">
+            <h3 class="text-gold tracking-widest uppercase italic text-sm mb-4">Atmosphere</h3>
+            <h2 class="text-4xl md:text-6xl text-[#1A2F4B] font-bold mb-8">歐式巴洛克<br>宮廷空間</h2>
+            <p class="text-gray-500 text-lg leading-loose mb-10 text-justify">
+                這裡不只是一間咖啡廳，更像是一座能讓人暫時逃離現實的小小博物館。
+                每一件古董、每一道光影、每一口甜點，都像巴黎午後電影裡的慢鏡頭。
+            </p>
+            <div class="border-l-4 border-gold pl-6 italic text-gray-400 text-lg">
+                「不是每個午後，都值得被匆忙度過。」
             </div>
         </div>
-    </div>
-</section>
-
-<!-- 菜單 -->
-<section id="menu" class="py-28 px-6 bg-white">
-    <div class="max-w-7xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-[#1A2F4B] tracking-[0.15em] mb-20 uppercase">Selection Menu</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <img src="./11-18-a4adr.jpg" class="image-card rounded-2xl shadow-lg lightbox-img">
-            <img src="./12-19-de4hw.jpg" class="image-card rounded-2xl shadow-lg lightbox-img">
-            <img src="./14-11-ojgxo.jpg" class="image-card rounded-2xl shadow-lg lightbox-img">
-            <img src="./15-12-ecr17.jpg" class="image-card rounded-2xl shadow-lg lightbox-img">
+        <div class="image-card shadow-2xl story-img-h h-[600px]" data-aos="fade-left">
+            <img src="./bf4276e48642744d5788bdad100cd45136c4f315.jpg" class="lightbox-trigger" alt="空間">
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- 頁尾資訊 -->
-<footer class="bg-[#1A2F4B] text-white py-16 border-t border-[#D4AF37]">
-    <div class="text-center px-6">
-        <h3 class="text-gold text-2xl tracking-[0.3em] uppercase font-bold mb-6">Blue Balloon Zhubei</h3>
-        <p class="text-sm font-light mb-10">新竹縣竹北市光明五街320號 | 03-555-2907</p>
-        <div class="flex justify-center gap-8 text-2xl mb-10">
-            <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="hover:text-gold transition"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="hover:text-gold transition"><i class="fa-brands fa-facebook"></i></a>
+    <!-- 玫瑰藏夢 (背景特效) -->
+    <section id="founder-story" class="py-32 bg-[#1A2F4B] text-white px-6 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10" data-aos="fade-up">
+            <h2 class="text-5xl md:text-7xl font-bold tracking-widest mb-12">玫瑰藏夢</h2>
+            <div class="bg-white/5 backdrop-blur-md border border-gold/20 rounded-3xl p-8 md:p-16 text-left space-y-8">
+                <p class="text-lg md:text-xl tracking-widest text-white/80 leading-relaxed">
+                    她曾是精品與古董收藏家。多年來，從世界各地帶回無數歐式古典傢俱、巴洛克擺件與水晶吊燈。
+                </p>
+                <p class="text-gold text-2xl md:text-4xl font-serif text-center py-6">「不該只有自己看見。」</p>
+                <p class="text-lg md:text-xl tracking-widest text-white/80 leading-relaxed">
+                    於是，她把對美的偏執，轉化為每一杯咖啡、每一份甜點的堅持。藍氣球不是一場衝動創業，而是一次溫柔的實踐。
+                </p>
+            </div>
         </div>
-        <p class="text-[10px] tracking-[0.25em] text-gray-500 uppercase">Designed by 然然設計 | © Blue Balloon Coffee</p>
+    </section>
+
+    <!-- Gallery 相簿空間 (手機直式 1 欄) -->
+    <section id="gallery" class="py-28 bg-[#F8F6F1] px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h3 class="text-gold tracking-widest uppercase text-sm mb-4 italic">Gallery</h3>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-widest mb-6">空間美學</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="image-card h-80 shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="./bf4276e48642744d5788bdad100cd45136c4f315.jpg" class="lightbox-trigger">
+                </div>
+                <div class="image-card h-80 shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="./11-18-a4adr.jpg" class="lightbox-trigger">
+                </div>
+                <div class="image-card h-80 shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="./12-19-de4hw.jpg" class="lightbox-trigger">
+                </div>
+                <div class="image-card h-80 shadow-lg" data-aos="zoom-in">
+                    <img src="./14-11-ojgxo.jpg" class="lightbox-trigger">
+                </div>
+                <div class="image-card h-80 shadow-lg md:col-span-2" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="./15-12-ecr17.jpg" class="lightbox-trigger">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 顧客評論 -->
+    <section class="py-28 bg-white px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="p-10 bg-[#FDFCF8] rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up">
+                <div class="text-gold mb-6 text-xl">★★★★★</div>
+                <p class="text-gray-600 leading-loose">「真的像走進歐洲電影裡，每個角落都能感受到店主的品味。」</p>
+                <div class="mt-8 text-xs text-gray-400 tracking-widest">— GOOGLE 評論</div>
+            </div>
+            <div class="p-10 bg-[#FDFCF8] rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-gold mb-6 text-xl">★★★★★</div>
+                <p class="text-gray-600 leading-loose">「竹北難得一見的法式氛圍，甜點跟茶品的器皿非常考究。」</p>
+                <div class="mt-8 text-xs text-gray-400 tracking-widest">— GOOGLE 評論</div>
+            </div>
+            <div class="p-10 bg-[#FDFCF8] rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-gold mb-6 text-xl">★★★★★</div>
+                <p class="text-gray-600 leading-loose">「適合想安靜享受午後的人，空間美到讓人捨不得離開。」</p>
+                <div class="mt-8 text-xs text-gray-400 tracking-widest">— GOOGLE 評論</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu 精選菜單 (點擊可放大) -->
+    <section id="menu" class="py-28 bg-[#FDFCF8] border-y border-gray-100 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-bold tracking-[0.2em] mb-20 uppercase">Selection Menu</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="image-card shadow-md aspect-[3/4]"><img src="./11-18-a4adr.jpg" class="lightbox-trigger"></div>
+                <div class="image-card shadow-md aspect-[3/4]"><img src="./12-19-de4hw.jpg" class="lightbox-trigger"></div>
+                <div class="image-card shadow-md aspect-[3/4]"><img src="./14-11-ojgxo.jpg" class="lightbox-trigger"></div>
+                <div class="image-card shadow-md aspect-[3/4]"><img src="./15-12-ecr17.jpg" class="lightbox-trigger"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact 聯絡資訊 -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center space-y-12" data-aos="fade-up">
+            <h3 class="text-3xl md:text-5xl font-bold tracking-widest">BLUE BALLOON CAFE</h3>
+            <div class="text-gray-500 tracking-widest space-y-4 text-lg">
+                <p>📍 新竹縣竹北市光明五街320號</p>
+                <p>📞 03-555-2907</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="https://www.google.com/maps/search/?api=1&query=藍氣球咖啡" target="_blank" class="bg-paris-blue text-white px-12 py-4 rounded-full shadow-lg">地圖導航</a>
+                <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="btn-gold px-12 py-4 rounded-full shadow-lg">官方臉書</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-paris-blue text-white py-20 text-center">
+        <div class="opacity-60 text-xs tracking-[0.4em] uppercase space-y-4">
+            <p>© Blue Balloon Cafe Zhubei</p>
+            <p>Designed by 然然設計</p>
+        </div>
+    </footer>
+
+    <!-- 燈箱 -->
+    <div id="lightbox" class="lightbox" onclick="this.classList.remove('active')">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="放大圖">
     </div>
-</footer>
 
-<!-- 燈箱元件 -->
-<div id="lightbox" class="lightbox">
-    <span class="lightbox-close" id="lightboxClose">&times;</span>
-    <img id="lightboxImage" src="">
-</div>
+    <!-- 必要腳本 -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // 1. AOS 初始化 (動畫)
+        AOS.init({ duration: 1000, once: true, offset: 100 });
 
-<!-- 腳本 -->
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    // 初始化動畫：設定啟動位移量，避免手機版滑動前全白
-    AOS.init({ duration: 1000, once: true, offset: 50 });
+        // 2. 燈箱邏輯
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const triggers = document.querySelectorAll('.lightbox-trigger');
 
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImage');
-    const lightboxClose = document.getElementById('lightboxClose');
-
-    document.querySelectorAll('.lightbox-img').forEach(img => {
-        img.addEventListener('click', () => {
-            lightboxImg.src = img.src;
-            lightbox.classList.add('active');
+        triggers.forEach(img => {
+            img.onclick = (e) => {
+                e.stopPropagation();
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            };
         });
-    });
 
-    const hideLightbox = () => {
-        lightbox.classList.remove('active');
-        lightboxImg.src = '';
-    };
-
-    lightboxClose.addEventListener('click', hideLightbox);
-    lightbox.addEventListener('click', (e) => { if(e.target === lightbox) hideLightbox(); });
-</script>
-
+        // 3. 解決橫向滑動微調：確保沒有任何元件超出螢幕寬度
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
