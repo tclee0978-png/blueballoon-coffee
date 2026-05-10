@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>藍氣球咖啡 Blue Balloon | 竹北法式宮廷精品</title>
+    <title>藍氣球咖啡 Blue Balloon Cafe | 竹北法式宮廷精品</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         h1, h2, h3, h4 { font-family: 'Noto Serif TC', serif; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: #FDFCF8; margin: 0; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #FDFCF8; margin: 0; scroll-behavior: smooth; }
+        .bg-paris-blue { background-color: #1A2F4B; }
+        .text-gold { color: #D4AF37; }
         .hero-section {
             background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./bf4276e48642744d5788bdad100cd45136c4f315.jpg');
             background-size: cover; background-position: center; height: 100vh;
@@ -21,58 +24,103 @@
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-[#1A2F4B]">
             <div class="text-2xl font-bold tracking-[0.3em] uppercase">Blue Balloon</div>
-            <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="text-[#E1306C] text-2xl"><i class="fa-brands fa-instagram"></i></a>
+            <div class="flex items-center gap-6">
+                <a href="#menu" class="hidden md:block text-sm font-bold tracking-widest hover:text-gold">精選菜單</a>
+                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="text-[#E1306C] text-2xl"><i class="fa-brands fa-instagram"></i></a>
+            </div>
         </div>
     </nav>
 
     <section class="hero-section flex items-center justify-center text-white text-center px-4">
-        <div>
+        <div data-aos="fade-up">
+            <span class="text-[#D4AF37] tracking-[0.5em] text-sm mb-4 block uppercase italic">The Art of Parisian Living</span>
             <h1 class="text-4xl md:text-7xl mb-8 font-bold leading-tight">在忙碌城市裡<br><span class="text-[#D4AF37]">留一點巴黎給自己</span></h1>
             <p class="text-lg md:text-xl font-light tracking-[0.2em] mb-10 text-gray-200">竹北精品咖啡 · 法式宮廷空間 · 頂級茗茶甜點</p>
-            <a href="tel:035552907" class="bg-[#D4AF37] text-white px-10 py-4 rounded-full font-bold shadow-2xl">立即預約訂位</a>
+            <a href="#notice" class="bg-[#D4AF37] text-white px-10 py-4 rounded-full font-bold shadow-2xl hover:bg-[#B8962E] transition">探索藍氣球</a>
         </div>
     </section>
 
-    <section class="py-16 bg-[#1A2F4B] text-white text-center">
-        <div class="max-w-4xl mx-auto px-6 border border-[#D4AF37]/30 p-10">
-            <h2 class="text-[#D4AF37] text-2xl font-bold mb-6 tracking-widest text-center">入店須知</h2>
-            <div class="grid md:grid-cols-2 gap-6 text-sm tracking-widest font-light text-left md:text-center">
-                <p>● 營業時間：11:00 - 18:30 (週日店休)</p>
-                <p>● 店內僅收現金，用餐限時 120 分鐘</p>
-                <p>● 恕不接待 12 歲以下兒童與毛小孩</p>
-                <p>● 附近設有「光明五街停車場」</p>
+    <section id="notice" class="py-20 bg-[#1A2F4B] text-white text-center">
+        <div class="max-w-5xl mx-auto px-6 border-2 border-[#D4AF37]/40 p-10 md:p-16">
+            <h2 class="text-[#D4AF37] text-2xl font-bold mb-10 tracking-[0.3em]">入店須知 NOTICE</h2>
+            <div class="grid md:grid-cols-2 gap-10 text-base leading-loose tracking-widest font-light text-left">
+                <div class="space-y-4">
+                    <p><i class="fas fa-clock text-[#D4AF37] mr-3"></i> 11:00 - 18:30 (週日店休)</p>
+                    <p><i class="fas fa-wallet text-[#D4AF37] mr-3"></i> 店內僅收現金，無刷卡服務</p>
+                    <p><i class="fas fa-hourglass-half text-[#D4AF37] mr-3"></i> 用餐限時 120 分鐘</p>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-red-200 font-bold"><i class="fas fa-exclamation-triangle text-[#D4AF37] mr-3"></i> 恕不接待 12 歲以下兒童與毛小孩</p>
+                    <p><i class="fas fa-phone text-[#D4AF37] mr-3"></i> 座位不多，建議先來電預約</p>
+                    <p><i class="fas fa-parking text-[#D4AF37] mr-3"></i> 附近設有「光明五街停車場」</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-[#1A2F4B] tracking-widest mb-16 text-center uppercase">Menu Selections</h2>
+    <section class="py-24 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center" data-aos="fade-up">
+        <div>
+            <h3 class="text-[#D4AF37] tracking-widest text-sm uppercase mb-2">Space Aesthetics</h3>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-[#1A2F4B]">法式宮廷美學空間</h2>
+            <p class="text-gray-500 leading-relaxed text-lg font-light mb-8">
+                我們將歐洲古董精品、水晶吊燈與職人打造的玫瑰花海天花板融為一體。在藍氣球咖啡，每一處細節都是藝術，每一件家具都有故事。
+            </p>
+            <img src="./1639207950-1614601012-g_l.jpg" class="rounded shadow-2xl w-full h-64 object-cover">
+        </div>
+        <div>
+            <img src="./bf4276e48642744d5788bdad100cd45136c4f315.jpg" class="rounded shadow-2xl w-full h-[600px] object-cover">
+        </div>
+    </section>
+
+    <section id="menu" class="py-24 bg-white border-y">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-[#1A2F4B] tracking-widest mb-16 uppercase">Menu Selections</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <img src="./11-18-a4adr.jpg" class="w-full rounded shadow-lg">
-                <img src="./12-19-de4hw.jpg" class="w-full rounded shadow-lg">
-                <img src="./14-11-ojgxo.jpg" class="w-full rounded shadow-lg">
-                <img src="./15-12-ecr17.jpg" class="w-full rounded shadow-lg">
+                <div class="space-y-4">
+                    <img src="./11-18-a4adr.jpg" class="w-full rounded shadow hover:scale-105 transition duration-500">
+                    <p class="text-xs text-gray-400">Coffee & Drinks</p>
+                </div>
+                <div class="space-y-4">
+                    <img src="./12-19-de4hw.jpg" class="w-full rounded shadow hover:scale-105 transition duration-500">
+                    <p class="text-xs text-gray-400">Special Selection</p>
+                </div>
+                <div class="space-y-4">
+                    <img src="./14-11-ojgxo.jpg" class="w-full rounded shadow hover:scale-105 transition duration-500">
+                    <p class="text-xs text-gray-400">Hediard Paris Tea</p>
+                </div>
+                <div class="space-y-4">
+                    <img src="./15-12-ecr17.jpg" class="w-full rounded shadow hover:scale-105 transition duration-500">
+                    <p class="text-xs text-gray-400">Pastry & Information</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="py-24 px-6 text-center bg-[#FDFCF8]">
         <div class="max-w-3xl mx-auto border-2 border-[#D4AF37] p-12">
-            <h3 class="text-3xl font-bold text-[#1A2F4B] mb-6 uppercase tracking-widest">Blue Balloon Cafe</h3>
-            <p class="text-gray-600 font-light tracking-widest mb-10">📍 新竹縣竹北市光明五街320號</p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="https://www.google.com/maps/search/?api=1&query=藍氣球咖啡" target="_blank" 
-                   class="bg-[#1A2F4B] text-white px-12 py-4 font-bold tracking-widest shadow-xl">
-                   開啟 Google 地圖
+            <h3 class="text-3xl font-bold text-[#1A2F4B] mb-8 uppercase tracking-widest">Blue Balloon Cafe</h3>
+            <div class="space-y-6 text-gray-600 font-light tracking-widest mb-12 text-lg">
+                <p>📍 竹北市光明五街320號</p>
+                <p>📞 Tel: 03-555-2907</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="https://www.google.com/maps/dir//藍氣球咖啡" target="_blank" 
+                   class="bg-[#1A2F4B] text-white px-12 py-4 font-bold tracking-widest shadow-xl hover:opacity-90 transition">
+                   開啟 Google 地圖導航
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" 
+                   class="bg-[#1877F2] text-white px-12 py-4 font-bold tracking-widest shadow-xl">
+                   FACEBOOK
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-400 text-[10px] tracking-[0.5em] border-t">
+    <footer class="py-12 text-center text-gray-400 text-[10px] tracking-[0.5em] uppercase border-t">
         © Blue Balloon Coffee Zhubei. Parisian Ambience in the City.
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
