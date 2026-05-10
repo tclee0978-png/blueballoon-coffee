@@ -3,114 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>藍氣球咖啡 Blue Balloon | 竹北法式宮廷精品下午茶</title>
+    <title>藍氣球咖啡 Blue Balloon | 竹北法式宮廷精品咖啡下午茶</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         h1, h2, h3, h4 { font-family: 'Noto Serif TC', serif; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: #FDFCF8; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #FDFCF8; margin: 0; }
         .bg-paris-blue { background-color: #1A2F4B; }
         .text-gold { color: #D4AF37; }
-        .border-gold { border-color: #D4AF37; }
+        /* 品牌首圖 - 玫瑰花海 */
+        .hero-section {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./bf4276e48642744d5788bdad100cd45136c4f315.jpg');
+            background-size: cover; background-position: center; height: 100vh;
+        }
     </style>
 </head>
 <body>
 
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-[0.3em] text-paris-blue">BLUE BALLOON</div>
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-paris-blue">
+            <div class="text-2xl font-bold tracking-[0.3em]">BLUE BALLOON</div>
             <div class="flex gap-4">
-                <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="text-[#1877F2] text-xl"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="text-[#E1306C] text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="tel:035552907" class="bg-paris-blue text-white px-5 py-2 rounded text-xs font-bold tracking-widest">立即預約</a>
             </div>
         </div>
     </nav>
 
-    <section class="relative h-screen flex items-center justify-center text-white overflow-hidden text-center px-4">
-        <div class="absolute inset-0 bg-black/50 z-10"></div>
-        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover">
-        <div class="relative z-20" data-aos="fade-up">
+    <section class="hero-section flex items-center justify-center text-white text-center px-4">
+        <div data-aos="zoom-out">
             <span class="text-gold tracking-[0.5em] text-sm mb-4 block italic uppercase">The Art of Parisian Living</span>
-            <h1 class="text-5xl md:text-7xl mb-8 font-bold leading-tight">在忙碌城市裡<br><span class="text-gold">留一點巴黎給自己</span></h1>
-            <a href="tel:035552907" class="bg-paris-blue text-white px-12 py-4 rounded shadow-2xl font-bold tracking-widest hover:bg-blue-900 transition">立即撥打電話預約</a>
+            <h1 class="text-4xl md:text-7xl mb-8 font-bold leading-tight">在忙碌城市裡<br><span class="text-gold">留一點巴黎給自己</span></h1>
+            <p class="text-lg md:text-xl font-light tracking-[0.2em] opacity-90">竹北精品咖啡 · 法式宮廷空間 · 頂級茗茶甜點</p>
         </div>
     </section>
 
-    <section class="py-24 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center" data-aos="fade-up">
-        <div class="order-2 md:order-1">
-            <h3 class="text-gold tracking-widest text-sm uppercase mb-2">Space Aesthetics</h3>
-            <h2 class="text-4xl font-bold mb-6 text-paris-blue">歐式巴洛克宮廷空間</h2>
-            <p class="text-gray-500 leading-relaxed mb-6">
-                闆娘多年珍藏的歐洲精品家具、水晶吊燈與壁鏡，搭配職人親手打造的玫瑰花海天花板。在這裡，每一處細節都是藝術，每一件古董都有故事。這不只是一間咖啡廳，更是一座專屬您的休憩博物館。
-            </p>
-        </div>
-        <div class="order-1 md:order-2">
-            <img src="https://images.unsplash.com/photo-1521017432531-fbd92d744264?auto=format&fit=crop&q=80&w=1000" class="rounded-sm shadow-xl">
-        </div>
-    </section>
-
-    <section class="py-24 bg-white shadow-inner">
-        <div class="max-w-6xl mx-auto px-6">
+    <section class="py-24 bg-white border-y">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-paris-blue tracking-widest">義大利精品咖啡與法國茗茶</h2>
+                <h2 class="text-3xl font-bold text-paris-blue tracking-widest uppercase">Menu Selections</h2>
                 <div class="w-20 h-1 bg-gold mx-auto mt-4"></div>
             </div>
-            <div class="grid md:grid-cols-2 gap-12 text-sm">
-                <div class="space-y-6">
-                    <h4 class="text-xl font-bold text-gold border-b border-gray-100 pb-2 italic">LAVAZZA Selection</h4>
-                    <div class="flex justify-between"><span>經典拿鐵 Caffè Latte</span><span class="font-bold text-paris-blue">$180</span></div>
-                    <div class="flex justify-between"><span>玫瑰拿鐵 Rose Latte</span><span class="font-bold text-paris-blue">$200</span></div>
-                    <div class="flex justify-between"><span>400次咖啡 Dalgona Coffee</span><span class="font-bold text-paris-blue">$200</span></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./11-18-a4adr.jpg" class="w-full rounded shadow hover:scale-105 transition duration-500">
+                    <p class="text-center text-gray-400 text-xs">精品咖啡系列</p>
                 </div>
-                <div class="space-y-6">
-                    <h4 class="text-xl font-bold text-gold border-b border-gray-100 pb-2 italic">Hediard Paris Tea</h4>
-                    <div class="flex justify-between"><span>皇家婚禮茶 Wedding Imperial</span><span class="font-bold text-paris-blue">$220</span></div>
-                    <div class="flex justify-between"><span>印度大吉嶺 Darjeeling</span><span class="font-bold text-paris-blue">$220</span></div>
-                    <div class="flex justify-between"><span>水沙蓮野生紅茶 (在地珍稀)</span><span class="font-bold text-paris-blue">$250</span></div>
+                <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+                    <img src="./12-19-de4hw.jpg" class="w-full rounded shadow hover:scale-105 transition duration-500">
+                    <p class="text-center text-gray-400 text-xs">特選飲品與茗茶</p>
+                </div>
+                <div class="space-y-4" data-aos="fade-up" data-aos-delay="300">
+                    <img src="./14-11-ojgxo.jpg" class="w-full rounded shadow hover:scale-105 transition duration-500">
+                    <p class="text-center text-gray-400 text-xs">歐洲經典茗茶</p>
+                </div>
+                <div class="space-y-4" data-aos="fade-up" data-aos-delay="400">
+                    <img src="./15-12-ecr17.jpg" class="w-full rounded shadow hover:scale-105 transition duration-500">
+                    <p class="text-center text-gray-400 text-xs">入店資訊與規範</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
-        <h3 class="text-gold tracking-widest text-sm uppercase mb-2">Artisan Dessert</h3>
-        <h2 class="text-4xl font-bold mb-10 text-paris-blue uppercase tracking-widest">HABIBI 職人馬卡龍</h2>
-        <div class="grid md:grid-cols-3 gap-8 mb-12">
-            <div class="p-6 border border-gray-100 bg-white">
-                <h5 class="font-bold text-paris-blue mb-2 text-lg">法式工藝</h5>
-                <p class="text-gray-400 text-sm italic">由法國主廚親自操刀，傳承三代點心師靈魂。</p>
-            </div>
-            <div class="p-6 border border-gray-100 bg-white">
-                <h5 class="font-bold text-paris-blue mb-2 text-lg">18種風味</h5>
-                <p class="text-gray-400 text-sm italic">從覆盆子到威士忌風味，每一口都是驚喜。</p>
-            </div>
-            <div class="p-6 border border-gray-100 bg-white">
-                <h5 class="font-bold text-paris-blue mb-2 text-lg">低糖減負</h5>
-                <p class="text-gray-400 text-sm italic">針對台灣口味降低20%甜度，完美演繹甜而不膩。</p>
+    <section class="py-24 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right">
+            <img src="./1639207950-1614601012-g_l.jpg" class="rounded-sm shadow-2xl">
+        </div>
+        <div data-aos="fade-left">
+            <h3 class="text-gold tracking-widest text-sm uppercase mb-2">Exquisite Indulgence</h3>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-paris-blue leading-tight text-justify">專屬頂級法式升級<br>雙人下午茶套組</h2>
+            <p class="text-gray-500 leading-loose text-lg font-light mb-8">
+                這不僅是一頓餐點，而是一次完整的法式體驗。包含兩壺升級茶飲與雙層下午茶點心，在水晶吊燈的光影下，將生活的忙碌暫時封存。
+            </p>
+            <div class="flex gap-4">
+                <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="bg-[#1877F2] text-white px-8 py-3 font-bold text-sm">私訊預約</a>
+                <a href="tel:035552907" class="border border-paris-blue text-paris-blue px-8 py-3 font-bold text-sm">致電訂位</a>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-paris-blue text-white text-center">
-        <div class="max-w-4xl mx-auto px-6 border-2 border-gold p-12 relative">
-            <h3 class="text-3xl font-bold text-gold mb-8 tracking-[0.2em]">藍氣球咖啡 Blue Balloon</h3>
-            <div class="space-y-4 mb-10">
-                <p>📍 302 新竹縣竹北市光明五街320號</p>
-                <p>📞 03-555-2907</p>
-                <p class="text-gray-400 text-sm tracking-widest">週日公休 · 低消一杯飲品 · 10%服務費</p>
+    <section class="py-24 bg-paris-blue text-white">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <h3 class="text-gold tracking-widest text-sm uppercase mb-4 text-center md:text-left">House Rules & Notes</h3>
+                <div class="space-y-4 text-gray-300 text-sm font-light leading-loose">
+                    <p>● 每位最低消費為一杯飲品（不含點心）</p>
+                    <p>● 酌收 10% 服務費，不限用餐時間</p>
+                    <p>● 因古董家具繁多，恕不招待未滿 12 歲孩童與毛小孩</p>
+                    <p>● 營業時間：週一至週六 11:00 - 19:00 (週日公休)</p>
+                </div>
             </div>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="bg-[#1877F2] px-8 py-3 font-bold text-sm">FACEBOOK</a>
-                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="bg-gradient-to-r from-orange-400 to-pink-500 px-8 py-3 font-bold text-sm">INSTAGRAM</a>
-                <a href="http://googleusercontent.com/maps.google.com/search?q=藍氣球咖啡" target="_blank" class="border border-white px-8 py-3 font-bold text-sm">GOOGLE MAP</a>
+            <div class="order-1 md:order-2">
+                <img src="./20210528172454_50.jpg" class="rounded shadow-xl">
             </div>
         </div>
     </section>
 
-    <footer class="py-8 text-center text-gray-500 text-[10px] tracking-[0.5em] uppercase">
-        © Blue Balloon Coffee Zhubei. All Rights Reserved.
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-3xl mx-auto border-2 border-gold p-12">
+            <h3 class="text-2xl font-bold text-paris-blue mb-8 tracking-widest">藍氣球咖啡 Blue Balloon</h3>
+            <p class="mb-10 text-lg tracking-widest italic font-light">📍 302 新竹縣竹北市光明五街320號</p>
+            <a href="http://googleusercontent.com/maps.google.com/search?q=藍氣球咖啡" target="_blank" class="inline-block bg-gold text-white px-12 py-4 font-bold tracking-widest shadow-xl hover:bg-yellow-600 transition">GOOGLE MAP 導航</a>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-400 text-[10px] tracking-[0.5em] uppercase">
+        © Blue Balloon Coffee Zhubei. Parisian Ambience in the City.
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
