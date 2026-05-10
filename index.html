@@ -3,65 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>藍氣球咖啡 Blue Balloon Coffee | 竹北精品咖啡</title>
+    <title>藍氣球咖啡 Blue Balloon | 竹北旗艦級精品早午餐</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        h1, h2, h3 { font-family: 'Noto Serif TC', serif; }
-        body { font-family: 'Noto Sans TC', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Noto Serif TC', serif; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #FDFCF8; }
         .bg-paris-blue { background-color: #1A2F4B; }
         .text-gold { color: #D4AF37; }
-        .btn-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-gradient { background: linear-gradient(45deg, #1A2F4B, #2A4A75); transition: 0.4s; }
+        .btn-gradient:hover { letter-spacing: 2px; }
     </style>
 </head>
-<body class="bg-[#FDFCF8]">
+<body>
 
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b">
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold tracking-widest text-paris-blue">BLUE BALLOON</div>
-            <div class="flex items-center gap-4">
-                <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="text-[#1877F2] text-2xl hover:opacity-70">
-                    <i class="fa-brands fa-square-facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="text-[#E1306C] text-2xl hover:opacity-70">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="tel:035552907" class="bg-paris-blue text-white px-4 py-2 rounded text-xs font-bold">撥打預約</a>
+            <div class="text-2xl font-bold tracking-[0.3em] text-paris-blue">BLUE BALLOON</div>
+            <div class="hidden lg:flex space-x-10 text-sm font-medium tracking-widest">
+                <a href="#story" class="hover:text-gold transition">品牌故事</a>
+                <a href="#signature" class="hover:text-gold transition">招牌餐點</a>
+                <a href="#gallery" class="hover:text-gold transition">店內氛圍</a>
+                <a href="#contact" class="hover:text-gold transition">聯絡我們</a>
+            </div>
+            <div class="flex gap-4">
+                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="text-[#E1306C] text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="tel:035552907" class="bg-paris-blue text-white px-4 py-2 rounded text-xs">立即預約</a>
             </div>
         </div>
     </nav>
 
-    <section class="relative h-screen flex items-center justify-center text-white text-center">
+    <section class="relative h-screen flex items-center justify-center text-white overflow-hidden">
         <div class="absolute inset-0 bg-black/40 z-10"></div>
-        <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover" alt="Cafe">
-        <div class="relative z-20 px-4" data-aos="zoom-out">
-            <h2 class="text-4xl md:text-7xl mb-6 tracking-widest font-bold">在忙碌城市裡</h2>
-            <p class="text-xl md:text-2xl font-extralight italic mb-10 text-blue-50">留一點巴黎給自己</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="btn-ig text-white px-10 py-4 text-sm font-bold tracking-widest rounded shadow-lg flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-instagram"></i> 追蹤 Instagram
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="bg-[#1877F2] text-white px-10 py-4 text-sm font-bold tracking-widest rounded shadow-lg flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-facebook"></i> 臉書粉專
-                </a>
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover scale-110" style="animation: zoom 20s infinite alternate;">
+        <div class="relative z-20 text-center px-4" data-aos="fade-up">
+            <span class="text-gold tracking-[0.5em] text-sm mb-4 block">SINCE 2020 · ZHUBEI</span>
+            <h1 class="text-5xl md:text-8xl mb-8 font-bold leading-tight">在忙碌城市裡<br><span class="text-gold">留一點巴黎給自己</span></h1>
+            <p class="text-lg md:text-xl font-light tracking-[0.2em] mb-12 opacity-80">精品手沖咖啡 · 法式經典早午餐 · 職人手作甜點</p>
+            <a href="#signature" class="btn-gradient px-12 py-5 text-sm font-bold tracking-widest rounded-full shadow-2xl">探索藍氣球風味</a>
+        </div>
+    </section>
+
+    <section id="story" class="py-24 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1000" class="rounded-lg shadow-2xl" alt="Cafe interior">
+        </div>
+        <div data-aos="fade-left">
+            <span class="text-gold tracking-widest text-sm uppercase">About Us</span>
+            <h2 class="text-4xl font-bold my-6 text-paris-blue">不只是咖啡，<br>是生活的慢藝術。</h2>
+            <p class="text-gray-500 leading-relaxed mb-6">
+                藍氣球咖啡座落於竹北光明五街，我們將法式的優雅與對食材的堅持完美揉合。每一顆莊園咖啡豆都經過精準控溫沖煮，每一份早午餐盤都是營養與美感的平衡。
+            </p>
+            <p class="text-gray-500 leading-relaxed italic border-l-4 border-gold pl-4">
+                「我們想在竹北，創造一個讓靈魂可以短暫飛行的空間。」
+            </p>
+        </div>
+    </section>
+
+    <section id="signature" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold text-paris-blue tracking-widest">SIGNATURE MENU</h2>
+                <div class="w-20 h-1 bg-gold mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="overflow-hidden rounded-lg mb-6 h-64">
+                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h4 class="text-2xl font-bold mb-3 text-paris-blue">莊園級手沖</h4>
+                    <p class="text-gray-400 font-light">嚴選非洲與中南美洲精品莊園，每一口都能品嚐到獨特的果酸與花香層次。</p>
+                </div>
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="overflow-hidden rounded-lg mb-6 h-64">
+                        <img src="https://images.unsplash.com/photo-1496044530063-fb47441d36bd?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h4 class="text-2xl font-bold mb-3 text-paris-blue">經典巴黎拼盤</h4>
+                    <p class="text-gray-400 font-light">酥脆可頌配上嫩滑歐姆蛋，搭配在地小農時蔬，這就是最優雅的早晨儀式。</p>
+                </div>
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="overflow-hidden rounded-lg mb-6 h-64">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h4 class="text-2xl font-bold mb-3 text-paris-blue">法式職人甜點</h4>
+                    <p class="text-gray-400 font-light">每日限量手工製作，不論是肉桂捲還是法式塔類，都是我們對味覺的極極致追求。</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 bg-paris-blue text-white text-center">
-        <div class="max-w-4xl mx-auto px-6">
-            <h3 class="text-3xl font-bold text-gold mb-12 tracking-widest">VISIT US</h3>
-            <p class="text-lg mb-4 text-white">📍 302 新竹縣竹北市光明五街320號</p>
-            <p class="text-lg mb-12 text-white font-bold">📞 03-555-2907</p>
-            <div class="flex justify-center gap-8 mb-12">
-                <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="text-4xl hover:text-gold transition"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="text-4xl hover:text-gold transition"><i class="fa-brands fa-instagram"></i></a>
+    <section id="gallery" class="py-24 bg-paris-blue text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+            <h2 class="text-4xl font-bold tracking-widest text-gold">ATMOSPHERE</h2>
+            <p class="mt-4 opacity-60">在藍色與光影交織的空間，尋找你的角落</p>
+        </div>
+        <div class="flex flex-nowrap animate-scroll gap-4 px-4">
+            <div class="min-w-[300px] h-80 rounded shadow-xl overflow-hidden bg-gray-800">
+                <img src="https://images.unsplash.com/photo-1521017432531-fbd92d744264?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80">
             </div>
-            <a href="https://www.google.com/maps/search/?api=1&query=藍氣球咖啡" target="_blank" class="inline-block border-2 border-gold text-gold px-12 py-4 font-bold hover:bg-gold hover:text-white transition tracking-widest">開啟 Google 地圖導航</a>
+            <div class="min-w-[300px] h-80 rounded shadow-xl overflow-hidden bg-gray-800">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80">
+            </div>
+            <div class="min-w-[300px] h-80 rounded shadow-xl overflow-hidden bg-gray-800">
+                <img src="https://images.unsplash.com/photo-1497933321188-941f9ad36b12?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80">
+            </div>
+             <div class="min-w-[300px] h-80 rounded shadow-xl overflow-hidden bg-gray-800">
+                <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80">
+            </div>
         </div>
     </section>
+
+    <section id="contact" class="py-24 px-6 text-center">
+        <div class="max-w-3xl mx-auto border-2 border-gold p-16 relative">
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-[#FDFCF8] px-8 py-2 font-bold text-gold tracking-widest">VISIT US</div>
+            <h3 class="text-3xl font-bold mb-10 text-paris-blue uppercase tracking-widest leading-loose">藍氣球咖啡 <br>Blue Balloon Coffee</h3>
+            <div class="space-y-6 text-xl mb-12">
+                <p class="font-light"><i class="fa-solid fa-location-dot text-gold mr-3"></i> 302 新竹縣竹北市光明五街320號</p>
+                <p class="font-bold"><i class="fa-solid fa-phone text-gold mr-3"></i> 03-555-2907</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="https://www.facebook.com/profile.php?id=100057066235859" target="_blank" class="bg-[#1877F2] text-white py-4 font-bold tracking-widest"><i class="fa-brands fa-facebook mr-2"></i> FACEBOOK</a>
+                <a href="https://www.instagram.com/blue.ballooncafe/" target="_blank" class="bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white py-4 font-bold tracking-widest"><i class="fa-brands fa-instagram mr-2"></i> INSTAGRAM</a>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=藍氣球咖啡竹北" target="_blank" class="block w-full mt-4 border border-paris-blue py-4 font-bold text-paris-blue hover:bg-paris-blue hover:text-white transition tracking-widest underline decoration-gold underline-offset-8">直接開啟 Google Map 導航</a>
+        </div>
+    </section>
+
+    <footer class="bg-paris-blue py-12 text-center">
+        <p class="text-gold text-xs tracking-[0.5em] mb-4 uppercase">Le plaisir de la vie</p>
+        <p class="text-white/40 text-[10px] tracking-widest">© BLUE BALLOON COFFEE BRUNCH. EST. 2020. ZHUBEI CITY.</p>
+    </footer>
+
+    <style>
+        @keyframes zoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+        .animate-scroll { animation: scroll 40s linear infinite; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    </style>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init({ duration: 1000, once: true });</script>
