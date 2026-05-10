@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藍氣球咖啡 Blue Balloon Coffee | 竹北精品咖啡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .bg-blue-balloon { background-color: #1A3A5F; } /* 深藍基調 */
+        .text-gold { color: #C5A059; } /* 金色點綴 */
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 導覽列 -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-widest bg-blue-balloon text-white px-3 py-1">BLUE BALLOON</h1>
+            <div class="space-x-8 hidden md:flex font-medium">
+                <a href="#about" class="hover:text-blue-600 transition">關於我們</a>
+                <a href="#menu" class="hover:text-blue-600 transition">精品菜單</a>
+                <a href="#contact" class="hover:text-blue-600 transition">店面資訊</a>
+            </div>
+            <a href="tel:03-XXXXXXX" class="bg-blue-balloon text-white px-5 py-2 rounded-full text-sm">立即預約</a>
+        </div>
+    </nav>
+
+    <!-- 英雄區 -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover" alt="Coffee Interior">
+        <div class="relative z-20 text-center text-white px-4">
+            <h2 class="text-5xl md:text-7xl font-light mb-6">品味，在藍色氣球升起時</h2>
+            <p class="text-xl md:text-2xl mb-8 font-extralight tracking-widest">竹北最純粹的精品手沖空間</p>
+            <a href="#menu" class="border-2 border-white px-8 py-3 hover:bg-white hover:text-black transition duration-300">探索風味</a>
+        </div>
+    </section>
+
+    <!-- 關於我們 -->
+    <section id="about" class="py-20 max-w-4xl mx-auto px-6 text-center">
+        <span class="text-gold tracking-[0.3em] uppercase text-sm">Our Philosophy</span>
+        <h3 class="text-3xl font-bold mt-4 mb-8 text-blue-balloon">不只是咖啡，是生活的慢藝術</h3>
+        <p class="leading-relaxed text-gray-600">
+            藍氣球咖啡座落於竹北核心地帶，我們致力於尋找全球精品莊園豆，<br>
+            透過精確的烘焙曲線與職人手沖，為您遞上一杯有溫度的作品。
+        </p>
+    </section>
+
+    <!-- 菜單簡介 -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-16">Signature Menu</h3>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="border-t-4 border-blue-balloon pt-6">
+                    <h4 class="text-xl font-bold mb-2">手沖單品咖啡</h4>
+                    <p class="text-gray-500">淺焙：衣索比亞 花見系列</p>
+                </div>
+                <div class="border-t-4 border-blue-balloon pt-6">
+                    <h4 class="text-xl font-bold mb-2">義式特調</h4>
+                    <p class="text-gray-500">藍氣球招牌拿鐵 (澳洲配方)</p>
+                </div>
+                <div class="border-t-4 border-blue-balloon pt-6">
+                    <h4 class="text-xl font-bold mb-2">職人手工甜點</h4>
+                    <p class="text-gray-500">每日限量：焦糖肉桂捲</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡與地圖 -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-3xl font-bold mb-6">Visit Us</h3>
+                <div class="space-y-4 text-lg">
+                    <p><strong>地址：</strong> 新竹縣竹北市 (請填入完整地址)</p>
+                    <p><strong>電話：</strong> 03-XXX-XXXX</p>
+                    <p><strong>營業時間：</strong> 10:00 - 19:00 (週一公休)</p>
+                </div>
+                <div class="mt-8 flex space-x-4">
+                    <button class="bg-black text-white px-6 py-3">Google 地圖導航</button>
+                    <button class="bg-blue-600 text-white px-6 py-3">Facebook 粉絲專頁</button>
+                </div>
+            </div>
+            <div class="h-80 bg-gray-300 rounded-lg flex items-center justify-center">
+                <span class="text-gray-500">【此處可嵌入 Google Map 程式碼】</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-balloon text-white py-10 text-center text-sm font-light">
+        &copy; 2026 Blue Balloon Coffee. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
